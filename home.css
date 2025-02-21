@@ -1,0 +1,475 @@
+
+
+
+:root {
+    --glow-color: hsl(186 100% 69%);
+  }
+
+  /* dark mode here */
+/* Add this to your existing CSS */
+
+
+
+
+.revealed-area {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle 280px at 50% 50%,
+    transparent 10%,
+    rgba(0, 0, 0, 0.98)
+  );
+  pointer-events: none;
+  z-index: 5;
+}
+
+  
+
+body {
+    box-sizing: border-box;
+    margin: auto;
+    
+}
+
+.container {
+    display: flex;
+    height: 100vh;  
+}
+
+aside {
+    position:fixed;
+    background: transparent;  
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    /* border: 1px solid rgba(255, 255, 255, 0.3); */
+    border-right: 1px solid rgba(255,  255, 255, 0.1);
+    backdrop-filter: blur(1.9px);
+    justify-content : center;
+    align-items: center;
+    height: 100vh;
+    padding: 2rem;
+    width: 20%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.dark-mode {
+ position: absolute;
+ right: 10px;
+ margin: 2em;
+}
+
+
+.dark-mode button {
+  fill: white;
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  text-shadow: 0 0 5px var(--glow-color);
+}
+
+.dark-mode button.dark {
+  color: black; 
+}
+
+
+
+.logo {
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    width: 300px;
+    height: 100px;
+}
+
+.logo .logo-image {
+  width: 300px;
+  height: 300px;
+}
+
+#sidebar {
+  transition: all 0.3s ease-out;
+}
+
+#sidebar.shrunk {
+  visibility: hidden;
+  width: 0;
+  padding: 0;
+  margin: 0;
+  opacity: 0;  
+}
+
+
+
+.sidebar-toggle {
+  position: fixed;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  top: 1rem;
+  left: 5px;
+  z-index: 1;
+  cursor: pointer;
+  text-shadow: 0 0 5px var(--glow-color);
+}
+
+.sidebar-toggle.active {
+  transform: rotate(180deg);
+}
+
+
+a.glowing-btn {
+    display: inline-block;
+    cursor: pointer;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.4em; 
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    margin: 2rem 0;
+    color: white;
+    text-shadow: 0 0 5px var(--glow-color);
+  }
+
+a.glowing-btn.clicked {
+  transform: translate(2rem);
+  text-shadow: rgba(0,238,255,1) 0px 0px 46px;
+  color: rgba(0, 238, 255, 1) 
+}
+  
+
+a.glowing-btn:hover,
+a.glowing-btn:hover .icon,
+a.glowing-btn:hover .text {
+  transform: translateX(2rem);
+  animation: none; 
+}
+
+
+.glowing-btn .icon {
+    animation: icon-flicker 3s infinite;
+}
+
+.glowing-btn .text {
+    animation: text-flicker 2s infinite;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}   
+
+
+.wrapper img {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.email-container {
+    position: absolute;
+    right: auto;
+    left: 45%;
+    background-color: transparent;
+    z-index: 100;
+    margin-top: 3rem;
+    backdrop-filter: blur(3.5px);
+    width: 400px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgba(251, 251, 251, 0.3);
+    gap: 2rem;  
+    padding: 25px;
+    border-radius: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+
+.email-container.move {
+  position: absolute;
+  left: 35%;
+  right: auto;
+
+
+}
+
+
+.email-container input,
+.email-container textarea {
+    height: 50px;
+    padding: 10px;
+    border-radius: 20px;
+    border-color: rgba(24, 4, 4, 0);
+    background: rgba(24, 4, 4, 0.2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    color: white;
+    text-shadow: var(--glow-color);
+}
+
+.email-container textarea {
+    height: 150px;
+    resize: vertical;
+    overflow-y: auto;
+    padding-right: 20px;
+}
+
+.email-container input::placeholder,
+.email-container textarea::placeholder {
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+}
+
+.email-container textarea::placeholder {
+    position: absolute;
+    top: 50%;   
+    right: 0;
+    left: 0;
+}
+
+
+.email-container textarea::-webkit-scrollbar {
+    width: 10px;  
+}
+
+.email-container textarea::-webkit-scrollbar-thumb {
+    background-color: #333; 
+    border-radius: 10px; 
+    border: 2px solid #333; 
+}
+
+.email-container textarea::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+    border-radius: 10px; 
+}
+
+.btn {
+    background: rgba(24, 4, 4, 0);
+    border: 1px solid white;
+    width: 50%;
+    margin-bottom: 10px;
+    border-radius: 48px;
+    padding: 20px;
+    border: 1px solid rgba(251, 251, 251, 0.3);
+    font-size: 20px;
+    color: rgba(251, 251, 251, 1);
+    cursor: pointer;
+}
+
+
+
+ .btn:hover {
+    color: white;
+    text-shadow:  0 0 5px var(--glow-color);
+    animation: button-animation ease 1s normal none;
+}
+
+/* footer side */
+
+footer {
+  height: 100px;
+}
+
+.contacts {
+  background-color: black;
+}
+
+.contacts .contacts-list {
+  padding: 2em 0;
+}
+
+.contacts-list ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+
+.contacts-list li {
+  list-style: none;
+  font-size: 25px;
+
+}
+
+.contacts-list ul li i {
+  color: white;
+}
+
+.contacts hr {
+  width: 80%;
+  margin: -1rem auto;
+  border-radius: 100%;
+  border-color: rgba(255, 255, 255, 0.35);
+  ;
+}
+
+
+.contacts .text-wrapper {
+  text-align: center;
+  margin: 2rem auto;
+  width: 50%;
+  line-height: 2;
+  font-style: italic;
+ padding-bottom: 2rem;
+}
+
+
+.contacts .footer-text {
+  color:  rgba(187, 187, 187, 0.45);;
+  font-size: 17px;
+}
+
+
+/* animation */
+
+@keyframes text-flicker {
+  0% {
+    opacity: 0.1;
+  }
+
+  2% {
+    opacity: 1;
+  }
+
+  8% {
+    opacity: 0.1;
+  }
+
+  9% {
+    opacity: 1;
+  }
+
+  12% {
+    opacity: 0.1;
+  }
+  20% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.3;
+  }
+  30% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.7;
+  }
+  72% {
+    opacity: 0.2;
+  }
+
+  77% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes icon-flicker {
+  0% {
+    opacity: 0.1;
+  }
+  2% {
+    opacity: 0.1;
+  }
+  4% {
+    opacity: 0.5;
+  }
+  19% {
+    opacity: 0.5;
+  }
+  21% {
+    opacity: 0.1;
+  }
+  23% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  83% {
+    opacity: 0.4;
+  }
+
+  87% {
+    opacity: 1;
+  }
+}
+
+
+@keyframes button-animation {
+    0% {
+      animation-timing-function: ease-in;
+      opacity: 1;
+      transform: translateY(-45px);
+    }
+  
+    24% {
+      opacity: 1;
+    }
+  
+    40% {
+      animation-timing-function: ease-in;
+      transform: translateY(-24px);
+    }
+  
+    65% {
+      animation-timing-function: ease-in;
+      transform: translateY(-12px);
+    }
+  
+    82% {
+      animation-timing-function: ease-in;
+      transform: translateY(-6px);
+    }
+  
+    93% {
+      animation-timing-function: ease-in;
+      transform: translateY(-4px);
+    }
+  
+    25%,
+    55%,
+    75%,
+    87% {
+      animation-timing-function: ease-out;
+      transform: translateY(0px);
+    }
+  
+    100% {
+      animation-timing-function: ease-out;
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }

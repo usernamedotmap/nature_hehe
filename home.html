@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link href="./home.css" rel="stylesheet" />
+    <!-- <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.23/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="dark-mode">
+        <button id="darkmode-button" class="revealable">
+          <span class="toggle-icon"><i class="fa-solid fa-star"></i></span>
+        </button>
+      </div>
+      <button id="sidebar-toggle" class="sidebar-toggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <aside id="sidebar">
+        <div class="logo">
+          <a href="./home.html"
+            ><img class="logo-image" src="./assets/logo.png" alt="logo to ah"
+          /></a>
+        </div>
+        <!-- Sidebar -->
+
+        <div>
+          <a class="glowing-btn" href="natureSpring.html"
+            ><span class="icon"
+              ><i class="fa-solid fa-bottle-water"></i> Na<span class="text"
+                >ture Sp</span
+              >ring</span
+            ></a
+          >
+          <a class="glowing-btn" href="./windOfNature.html"
+            ><span class="text"
+              ><i class="fa-solid fa-code-fork"></i> W<span class="icon"
+                >ind</span
+              >
+              o<span class="text">f Na</span>ture</span
+            >
+          </a>
+          <a class="glowing-btn" href="./nature.html"
+            ><span class="icon"
+              ><i class="fa-solid fa-leaf"></i> N<span class="text">atu</span>re
+            </span></a
+          >
+        </div>
+      </aside>
+
+      <!-- main content-->
+      <div class="wrapper">
+        <div class="email-container">
+          <form id="feedbackForm">
+            <input type="email" id="email" placeholder="e-meyl" required />
+            <textarea
+              placeholder="Ur feedback"
+              id="feedback"
+              required
+            ></textarea>
+            <button class="btn" type="submit">Toink</button>
+          </form>
+        </div>
+        <img src="./assets/homepage.jpg" />
+      </div>
+    </div>
+
+    <footer>
+      <div class="contacts">
+        <div class="contacts-list">
+          <ul>
+            <li>
+              <a
+                href="https://www.facebook.com/profile.php?id=100076518497332"
+                target="_blank"
+                ><i class="fa-brands fa-facebook-f"></i
+              ></a>
+            </li>
+            <li>
+              <a
+                href="https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=chrstnmasada@gmail.com"
+                target="_blank"
+                ><i class="fa-solid fa-envelope"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/_dalandanz/" target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@jrhey.official" target="_blank"
+                ><i class="fa-brands fa-tiktok"></i
+              ></a>
+            </li>
+          </ul>
+        </div>
+        <hr />
+
+        <div class="text-wrapper">
+          <p class="footer-text">
+            Pahinga na po ha? At maaga pa mamaya. Tandaan mo palagi na di ka
+            naging abala sa akin ha? Mas pabor ako Sunduin kita doon atleast
+            safe ka na nakauwi at syempre nakasam,a din kita I love you so much.
+            Maaga gumising ha? Sweetdreams and Godbless. I love youu so much! 😘
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="revealed-area"></div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
